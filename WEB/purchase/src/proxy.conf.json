@@ -1,0 +1,8 @@
+{
+  "/purchase/*": {
+    "target": "https://localhost:7040/api",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}

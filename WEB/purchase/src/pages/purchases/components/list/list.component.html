@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="header">
+    <span class="title">Lista de Facturas</span>
+  </div>
+  <nz-table #table nzSize='small' [nzData]="purchases" [nzLoading]="loading" [nzPageSize]="5">
+    <thead>
+      <tr>
+        <th *ngFor="let column of listOfColumns; let indexElement = index" [nzSortOrder]="column.sortOrder"
+          [nzSortFn]="column.sortFn" [nzSortDirections]="column.sortDirections"
+          [nzFilterMultiple]="column.filterMultiple" [nzFilters]="column.listOfFilter" [nzFilterFn]="column.filterFn"
+          nzAlign="center" [nzCustomFilter]="column.searchEnabled" [nzWidth]="column.size">
+          {{ column.name }}
+          <nz-filter-trigger *ngIf="column.searchEnabled" [(nzVisible)]="column.searchVisible"
+            [nzActive]="value.value.length > 0" [nzDropdownMenu]="menu">
+            <i nz-icon nzType="search"></i>
+          </nz-filter-trigger>
+          <nz-dropdown-menu #menu="nzDropdownMenu">
+            <div class="ant-table-filter-dropdown">
+              <div class="search-box">
+                <input type="text" nz-input placeholder="Buscar" (keyup)="column.search(value.value, table)" #value
+                  #key />
+                <button nz-button nzSize="small" nzType="primary" class="search-button">
+                  Buscar
+                </button>
+                <button nz-button nzType="default" nzDanger nzSize="small"
+                  (click)="column.reset(value, indexElement, this, table)" class="danger">
+                  Limpiar
+                </button>
+              </div>
+            </div>
+          </nz-dropdown-menu>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let purchase of table.data, let i = index">
+        <td nzBreakWord>
+          {{ purchase.purchaseId }}
+        </td>
+        <td nzAlign="center">
+          <nz-tag [nzColor]="getStatus(purchase.status!).color">
+            {{ getStatus(purchase.status!).label }}
+          </nz-tag>
+        </td>
+        <td nzBreakWord>
+          {{ purchase.client }}
+        </td>
+        <td nzBreakWord>
+          {{ purchase.city }}
+        </td>
+        <td nzBreakWord>
+          {{ purchase.nit }}
+        </td>
+        <td nzBreakWord>
+          {{ purchase.total }}
+        </td>
+        <td nzAlign="center" class="btn-actions">
+          <button nz-button nzType="primary" (click)="detailPurchase(purchase)" class="btn">
+            Ver Detalle
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

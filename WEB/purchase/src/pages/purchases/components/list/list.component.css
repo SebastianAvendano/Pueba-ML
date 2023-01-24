@@ -1,0 +1,54 @@
+.container {
+  padding: 24px;
+  height: 100%;
+}
+
+.header {
+  margin-bottom: 10px;
+}
+
+.title {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+nz-table {
+  box-shadow: 2px 2px 5px rgba(105, 106, 108, 0.35);
+  overflow: hidden;
+}
+
+th {
+  text-transform: uppercase;
+}
+
+nz-tag {
+  text-align: center;
+  width: 100px;
+}
+
+.btn-actions{
+  width: 150px;
+}
+
+search-box {
+  padding: 8px;
+}
+
+.ant-table-filter-dropdown{
+  padding: 10px;
+}
+.search-box input {
+  width: 188px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.search-box button {
+  width: 90px;
+}
+
+.search-button {
+  margin-right: 8px;
+}
+

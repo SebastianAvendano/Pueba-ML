@@ -1,0 +1,45 @@
+:host {
+  display: flex;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-layout {
+  height: 100vh;
+}
+
+.menu-sidebar {
+  position: relative;
+  z-index: 10;
+  box-shadow: 2px 0 6px rgba(0, 21, 41, .35);
+}
+
+.trigger:hover {
+  color: #aed831;
+}
+
+.sidebar-logo {
+  position: relative;
+  overflow: hidden;
+  line-height: 64px;
+  background: #aed831;
+  transition: all .3s;
+  padding: 5%;
+}
+
+.sidebar-logo img {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  vertical-align: middle;
+}
+
+nz-content {
+  background-color: #fafafa;
+}
+
+.inner-content {
+  background: #fafafa;
+  height: 100%;
+}

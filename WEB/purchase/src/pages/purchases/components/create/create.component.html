@@ -1,0 +1,120 @@
+<nz-spin [nzSpinning]="loadingData" nzTip="cargando...">
+  <form nz-form [formGroup]="purchaseForm" [nzLayout]="'vertical'">
+    <div nz-row [nzGutter]="8">
+      <div nz-col nzSpan="6">
+        <nz-form-item>
+          <nz-form-label nzFor="purchaseId" nzRequired>Numero de Factura</nz-form-label>
+          <nz-form-control [nzErrorTip]="titleErrorTip">
+            <input nz-input formControlName="purchaseId" id="purchaseId" placeholder="P-0001" />
+          </nz-form-control>
+          <ng-template #titleErrorTip let-control>
+            <ng-container *ngIf="control.hasError('required')">Este campo es obligatorio</ng-container>
+            <ng-container *ngIf="control.hasError('pattern')">formato de texto invalido</ng-container>
+          </ng-template>
+        </nz-form-item>
+      </div>
+      <div nz-col nzSpan="6">
+        <nz-form-item>
+          <nz-form-label nzFor="client" nzRequired>Cliente</nz-form-label>
+          <nz-form-control [nzErrorTip]="clientErrorTip">
+            <input nz-input formControlName="client" id="client" placeholder="Nombre del clliente" />
+          </nz-form-control>
+          <ng-template #clientErrorTip let-control>
+            <ng-container *ngIf="control.hasError('required')">Este campo es obligatorio</ng-container>
+            <ng-container *ngIf="control.hasError('pattern')">Este campo debe ser una URL</ng-container>
+          </ng-template>
+        </nz-form-item>
+      </div>
+      <div nz-col nzSpan="6">
+        <nz-form-item>
+          <nz-form-label nzFor="email" nzRequired>Email</nz-form-label>
+          <nz-form-control [nzErrorTip]="emailErrorTip">
+            <input nz-input formControlName="email" id="email" placeholder="Nombre del clliente" />
+          </nz-form-control>
+          <ng-template #emailErrorTip let-control>
+            <ng-container *ngIf="control.hasError('required')">Este campo es obligatorio</ng-container>
+            <ng-container *ngIf="control.hasError('email')">Ingrese un correo valido</ng-container>
+          </ng-template>
+        </nz-form-item>
+      </div>
+      <div nz-col nzSpan="6">
+        <nz-form-item>
+          <nz-form-label nzFor="city" nzRequired>Cuidad</nz-form-label>
+          <nz-form-control [nzErrorTip]="cityErrorTip">
+            <input nz-input formControlName="city" id="city" placeholder="Ingrese la cuidad" />
+          </nz-form-control>
+          <ng-template #cityErrorTip let-control>
+            <ng-container *ngIf="control.hasError('required')">Este campo es obligatorio</ng-container>
+            <ng-container *ngIf="control.hasError('pattern')">formato de texto invalido</ng-container>
+          </ng-template>
+        </nz-form-item>
+      </div>
+    </div>
+    <div nz-row [nzGutter]="8">
+      <div nz-col nzSpan="6">
+        <nz-form-item>
+          <nz-form-label nzFor="nit" nzRequired>Nit</nz-form-label>
+          <nz-form-control [nzErrorTip]="nitErrorTip">
+            <input nz-input formControlName="nit" id="nit" placeholder="Ingrese el Nit"/>
+          </nz-form-control>
+          <ng-template #nitErrorTip let-control>
+            <ng-container *ngIf="control.hasError('required')">Este campo es obligatorio</ng-container>
+            <ng-container *ngIf="control.hasError('pattern')">formato de texto invalido</ng-container>
+          </ng-template>
+        </nz-form-item>
+      </div>
+      <div nz-col nzSpan="6">
+        <nz-form-item>
+          <nz-form-label nzFor="subTotal" nzRequired>Subtotal</nz-form-label>
+          <nz-form-control [nzErrorTip]="totalErrorTip">
+            <input nz-input formControlName="subTotal" id="subTotal" placeholder="subTotal" type="number" />
+          </nz-form-control>
+          <ng-template #totalErrorTip let-control>
+            <ng-container *ngIf="control.hasError('required')">Este campo es obligatorio</ng-container>
+            <ng-container *ngIf="control.hasError('pattern')">formato de texto invalido</ng-container>
+          </ng-template>
+        </nz-form-item>
+      </div>
+      <div nz-col nzSpan="6">
+        <nz-form-item>
+          <nz-form-label nzFor="iva" nzRequired>IVA</nz-form-label>
+          <nz-form-control [nzErrorTip]="ivaErrorTip">
+            <input nz-input formControlName="iva" id="iva" placeholder="iva" type="number" />
+          </nz-form-control>
+          <ng-template #ivaErrorTip let-control>
+            <ng-container *ngIf="control.hasError('required')">Este campo es obligatorio</ng-container>
+            <ng-container *ngIf="control.hasError('pattern')">formato de texto invalido</ng-container>
+          </ng-template>
+        </nz-form-item>
+      </div>
+      <div nz-col nzSpan="6">
+        <nz-form-item>
+          <nz-form-label nzFor="total" nzRequired>total</nz-form-label>
+          <nz-form-control [nzErrorTip]="totalErrorTip">
+            <input nz-input formControlName="total" id="total" placeholder="total" type="number" />
+          </nz-form-control>
+          <ng-template #totalErrorTip let-control>
+            <ng-container *ngIf="control.hasError('required')">Este campo es obligatorio</ng-container>
+            <ng-container *ngIf="control.hasError('pattern')">formato de texto invalido</ng-container>
+          </ng-template>
+        </nz-form-item>
+      </div>
+    </div>
+    <div nz-row nzGutter="8">
+      <div nz-col nzSpan="6">
+        <nz-form-item>
+          <nz-form-label nzFor="isPaid">¿Esta Pago?</nz-form-label>
+          <nz-form-control>
+            <nz-switch formControlName="isPaid"></nz-switch>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+    </div>
+  </form>
+</nz-spin>
+<div *nzModalFooter>
+  <button nz-button nzType="default" (click)="destroyModal()">Cancelar</button>
+  <button nz-button nzType="primary" (click)="validateAction()" [nzLoading]="loading">
+    {{ isEditing ? "Enviar Correo" : "Crear" }}
+  </button>
+</div>

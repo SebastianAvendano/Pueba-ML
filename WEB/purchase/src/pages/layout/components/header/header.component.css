@@ -1,0 +1,61 @@
+:host {
+  display: flex;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.header-trigger {
+  height: 64px;
+  padding: 20px 24px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all .3s, padding 0s;
+}
+
+.trigger:hover {
+  color: #aed831;
+}
+
+nz-header {
+  padding: 0;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+  background-color: #fafafa;
+}
+
+.app-header {
+  margin: 24px;
+  border-radius: 10px;
+  position: relative;
+  height: 64px;
+  padding: 0;
+  background: #fff;
+  box-shadow: 2px 2px 5px rgba(105, 106, 108, 0.35);
+}
+
+.avatar {
+  float: right;
+  display: flex;
+  margin-right: 24px;
+}
+
+nz-badge {
+  margin-right: 10px;
+}
+
+.notification {
+  font-size: 23px;
+  cursor: pointer;
+  transition: all .3s, padding 0s;
+}
+
+span {
+  font-size: medium;
+  margin: 10px;
+}
+
+.notification:hover {
+  color: #aed831;
+}

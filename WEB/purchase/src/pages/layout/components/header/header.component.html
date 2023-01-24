@@ -1,0 +1,32 @@
+<nz-header>
+  <div class="app-header">
+    <span class="header-trigger" (click)="toogleCollapsed()">
+      <i class="trigger" nz-icon nzType='menu-fold'></i>
+    </span>
+    <div class="avatar">
+      <div>
+        <nz-badge nzDot>
+          <i class="notification" nz-icon nzType="bell"></i>
+        </nz-badge>
+      </div>
+      <div>
+        <nz-divider nzType="vertical"></nz-divider>
+      </div>
+      <div class="avatar">
+        <div>
+          <button nz-button  nzType="text" nz-popover [nzPopoverContent]="contentTemplate">
+            correo@correo.com
+          </button>
+          <ng-template #contentTemplate>
+            <button nz-button type="text">
+              Cerrar Sesion
+            </button>
+          </ng-template>
+        </div>
+        <div>
+          <nz-avatar nzSize="large" nzIcon="user" style="margin: 0 auto ;"></nz-avatar>
+        </div>
+      </div>
+    </div>
+  </div>
+</nz-header>
